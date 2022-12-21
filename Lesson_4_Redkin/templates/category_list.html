@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+Список категорий
+{% endblock %}
+{% block menu %}
+	{% include "menu.html" %}
+{% endblock %}
+{% block content %}
+<h1>Список категорий</h1>
+{% if objects_list %}
+<ul>
+    {% for category in objects_list %}
+    <li>
+        <p>{{ category.name }}</p>
+        <a href="/courses_list/?id={{ category.id }}">Показать курсы</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+Еще не создано ни одной категории
+{% endif %}
+{% endblock %}
