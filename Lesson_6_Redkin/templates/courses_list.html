@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+Список курсов
+{% endblock %}
+{% block menu %}
+{% include "menu.html" %}
+{% endblock %}
+{% block content %}
+<a href="/create_course/?id={{ id }}">Создать новый курс</a>
+<h1>Список курсов для категории {{ name }}</h1>
+{% if objects_list %}
+<ul>
+    {% for course in objects_list %}
+    <li>
+        <p>{{ course.name }}</p>
+        <p>{{ course.category }}</p>
+        <a href="/copy_course/?id={{ id }}&name={{ course.name }}">Скопировать</a>
+    </li>
+    {% endfor %}
+</ul>
+{{ objects_list }}
+{% else %}
+Еще не создано ни одного курса
+{% endif %}
+{% endblock %}

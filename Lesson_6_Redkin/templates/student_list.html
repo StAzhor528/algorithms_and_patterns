@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Создание курса
+{% endblock %}
+{% block menu %}
+	{% include "menu.html" %}
+{% endblock %}
+{% block content %}
+    <ul>
+		<li><a href="/create_student/">Создать студента</a></li>
+		<li><a href="/add_student/">Добавить студента на курс</a></li>
+	</ul>
+    <h1>Список студентов</h1>
+		<ul>
+			{% for student in objects_list %}
+			<li>
+				<p>{{ student.name }}</p>
+				{% for course in student.courses %}
+					{{ course.name }}
+				{% endfor %}
+			</li>
+			{% endfor %}
+		</ul>
+{% endblock %}
