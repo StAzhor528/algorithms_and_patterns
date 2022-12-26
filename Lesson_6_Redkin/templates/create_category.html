@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+Создание категории
+{% endblock %}
+{% block menu %}
+	{% include "menu.html" %}
+{% endblock %}
+{% block content %}
+    <h1>Создание категории</h1>
+		<form action="" method="post">
+			<fieldset>
+				<p><label class="title" for="name">Название категории:</label>
+					<input type="text" name="name" id="name"><br />
+				</p>
+			</fieldset>
+			<div class="submit"><input type="submit" value="Создать" /></div>
+		</form>
+{% endblock %}
